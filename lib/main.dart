@@ -4,7 +4,7 @@ void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  static const String _title = 'Flutter Stateful Clicker Counter';
+  static const String _title = 'Miskleaf';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: const Text('Flutter Demo Click Counter'),
+        title: const Text('Miskleaf'),
+          actions: [
+            IconButton(
+              icon: NetworkImage('https://misskey.nukumori-sky.net/proxy/avatar.webp?url=https%3A%2F%2Fs3.nukumori-sky.net%2Ffiles%2Fwebpublic-1888d496-02fc-41ee-986d-407a74c0e50b.png&amp;avatar=1'),
+              onPressed: () {
+                // ボタンが押された時の処理を追加
+                print('Search button pressed');
+              },
+            ),
+          ]
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -73,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'あなたは何度もボタンを押した：',
             ),
             Text(
               '$_counter',
@@ -84,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        tooltip: '増やす',
         child: const Icon(Icons.add),
       ),
     );
